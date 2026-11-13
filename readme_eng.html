@@ -38,9 +38,6 @@
             <li class="nav-item">
               <a class="nav-link" href="#movelist">Move list</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#credits">Credits</a>
-            </li>
           </ul>
                                                                   
           <div class="dropdown">
@@ -69,10 +66,16 @@
                     <li><a tabindex="-1" href="#Hagin">Hagin & Tommi</a></li>
                     <li><a tabindex="-1" href="#KhaosLong">KhaosLong</a></li>
                     <li><a tabindex="-1" href="#Mefju">Mefju</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a class="test" tabindex="-1" href="#">Hero - 3<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
                     <li><a tabindex="-1" href="#Mia">Mia</a></li>
                     <li><a tabindex="-1" href="#Mirracky">Mirracky</a></li>
                     <li><a tabindex="-1" href="#Nino">Nino</a></li>
                     <li><a tabindex="-1" href="#Pronto">Pronto</a></li>
+                    <li><a tabindex="-1" href="#Raize">Raize</a></li>
                     <li><a tabindex="-1" href="#Rampe">Rampe</a></li>
                     <li><a tabindex="-1" href="#Ryozaki">Ryozaki</a></li>
                     <li><a tabindex="-1" href="#Stancher">Stancher</a></li>
@@ -130,26 +133,66 @@
                 <h3>Update content</h3>
 				
 				<div id="accordion">
+				  <div class="card" id="cardv04">
+					<div class="card-header">
+					  <h5 class="mb-0">
+						<button class="btn btn-link" data-toggle="collapse" data-target="#collapsev04" aria-expanded="false" aria-controls="collapsev04">
+						  v0.4
+						</button>
+					  </h5>
+					</div>
+
+					<div id="collapsev04" class="collapse show" aria-labelledby="collapsev03" data-parent="#accordion">
+					    <div class="card-body">
+							<h6><b>Readme</b></h6>
+							<ul>
+								<li>Added Run, Dash, Grab description, clarified use case</li>
+								<li>Louis: Added missing Phoenix Recuperation, fixed Thunder Punch (Down) wrong command</li>
+							</ul>
+							<h6><b>Balance</b></h6>
+							<ul>
+								<li>Ryozaki: Decreased charge cost of Tenchi Haoh Ken to 5, improves functions, Taunt now grants charge instead of MP, increased window for Taunt, can now taunt out of stun finish</li>
+								<li>Beltor, Ryozaki: Can now taunt out of weapon attack and drinking</li>
+								<li>Winnie: Added variation of Gust</li>
+							</ul>
+							<h6><b>Full character</b></h6>
+							<ul>
+								<li>Crimson: Full remake</li>
+							</ul>
+							<h6><b>Graphic</b></h6>
+							<ul>
+								<li>KhaosLong, Ryozaki: Improved portrait</li>
+								<li>Mia: Improved animation of Yan Long Xiang Kong</li>
+							</ul>
+							<h6><b>Bugfix</b></h6>
+							<ul>
+								<li>Ryozaki: Removed residue shadow after using Rock Slam</li>
+							</ul>
+						</div>
+					</div>
+				  </div>
 				  <div class="card" id="cardv03">
 					<div class="card-header">
 					  <h5 class="mb-0">
-						<button class="btn btn-link" data-toggle="collapse" data-target="#collapsev03" aria-expanded="false" aria-controls="collapsev03">
+						<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsev03" aria-expanded="false" aria-controls="collapsev03">
 						  v0.3
 						</button>
 					  </h5>
 					</div>
 
-					<div id="collapsev03" class="collapse show" aria-labelledby="collapsev03" data-parent="#accordion">
+					<div id="collapsev03" class="collapse" aria-labelledby="collapsev03" data-parent="#accordion">
 					    <div class="card-body">
 							<h6><b>Readme</b></h6>
 							<ul>
 								<li>Improved clarity of move list</li>
 								<li>Mia: Fixed incorrect MP cost of moves</li>
+								<li>HongBa: Fixed incorrect MP cost of moves</li>
 							</ul>
 							<h6><b>Balance</b></h6>
 							<ul>
 								<li>Darius: Shock Bomb now will drag enemy towards a specific point that benefits Shock Field</li>
 								<li>Darius: Lightning Explosion now triggers 2 extra bolts after initial bolts, reduced character delay, costs no HP</li>
+								<li>HongBa: Decreased MP cost of moves</li>
 							</ul>
 							<h6><b>Full character</b></h6>
 							<ul>
@@ -461,10 +504,13 @@
 			<h4>Key set</h4>
             Defend D<br/>Jump J<br/>Attack A<br/>Up ↑<br/>Down ↓<br/>Forward →<br/>Backward ←<br/>
 			   Wait +<br/>Repeat (X...)<br/>Added move (X)<br/>
-			   &#8627: this move can only be cast by chaining from the move above it<br/><br/>
-                <h4>MP cost:</h4>
+			   &#8627: this move can only be cast by chaining from the move above it<br/>
+			   Run: Press →→ when standing or walking<br/>
+			   Grab: Press direction towards stunned enemy<br/>
+			   Dash: Run+J or Jump landing+→J<br/>
+                <h4>MP cost</h4>
 				<p>Single number: Cost is fixed for each cast<br/>
-				A + B: Each cast may consume different amount of MP<br/>
+				A+B: Each cast may consume different amount of MP<br/>
 				A...: Cost is fixed for repeated cast<br/>
 				A/second: Continued move which depletes MP in fixed rate
             </p>
@@ -580,7 +626,7 @@
                 <tr>
                 <td>&#8627 Energy Blast</td>
                 <td>&#8627 A(A)<br/>Aerial+D→A(A)</td>
-                <td>15 + 15</td>
+                <td>15+15</td>
                 <td>-</td>
                 </tr>
                 <tr>
@@ -910,14 +956,20 @@
                 </tr>
                 <tr>
                 <td>&#8627 Cross Slash</td>
-                <td>&#8627 D↑J<br/>Jump+AJ<br/>Dash+AJ</td>
+                <td>&#8627 D↑J</td>
+                <td>10</td>
+                <td>-</td>
+                </tr>
+                <tr>
+                <td>Cross Slash</td>
+                <td>Aerial+AJ<br/>Dash+AJ</td>
                 <td>10</td>
                 <td>-</td>
                 </tr>
                 <tr>
                 <td>Blade spin</td>
                 <td>DJA</td>
-                <td>10 + 15/s</td>
+                <td>10+15/s</td>
                 <td>Press D to cancel</td>
                 </tr>
                 <tr>
@@ -1049,11 +1101,11 @@
                 <td>Grab claw</td>
                 <td>Grab+A...</td>
                 <td>-</td>
-                <td>+1~3 Blood<br/>Treated as typical grab</td>
+                <td>+1~4 Blood<br/>Treated as typical grab</td>
                 </tr>
                 <tr>
                 <td>Fly</td>
-                <td>Jump+J</td>
+                <td>Aerial+J</td>
                 <td>-</td>
                 <td>Can control direction by pressing ↑/↓/←/→<br/>Press J to cancel flying<br/>Press A to drop and attack</td>
                 </tr>
@@ -1133,7 +1185,7 @@
             <h3>Crimson</h3>
 			<p><b>Origin:</b> Hooded minion from unfinished character collection by Gad<br/>
 			<b>Story:</b> Cult leader travelling from a broken universe, she sets up mercenary business and does not hesitate to cause chaos whenever something gets into her way.<br/>
-			<b>System:</b><br/> Horde - Can channel her phantoms to copy her moves</p>
+			<b>System:</b><br/> Horde - Can channel her phantoms to copy her moves and refresh duration</p>
             <img src="readme\image\crimson_f.png"></img>
             <table class="table table-bordered">
             <thead>
@@ -1146,33 +1198,69 @@
             </thead>
             <tbody>
                 <tr>
-                <td>Quick cut</td>
+                <td>Back kick</td>
+                <td>Dash+←A</td>
+                <td>-</td>
+                <td>-</td>
+                </tr>
+                <tr>
+                <td>Explosion Stab</td>
+                <td>Grab+AA</td>
+                <td>-</td>
+                <td>-</td>
+                </tr>
+                <tr>
+                <td>Assault</td>
                 <td>D→A</td>
-                <td>-</td>
+                <td>15</td>
                 <td>Triggers Horde</td>
                 </tr>
                 <tr>
-                <td>Downward cut</td>
+                <td>Leap Step</td>
+                <td>D→J</td>
+                <td>-</td>
+                <td>-</td>
+                </tr>
+                <tr>
+                <td>Cuts</td>
                 <td>D↓A</td>
-                <td>-</td>
+                <td>15</td>
                 <td>Triggers Horde</td>
                 </tr>
                 <tr>
-                <td>Upward cut</td>
+                <td>Phantom</td>
+                <td>D↓J(J...)</td>
+                <td>20...</td>
+                <td>Lasts 2 seconds<br/>Up to 8 times</td>
+                </tr>
+                <tr>
+                <td>&#8627 Phantom: Assault</td>
+                <td>&#8627 A</td>
+                <td>-</td>
+                <td>-</td>
+                </tr>
+                <tr>
+                <td>&#8627 Phantom: Downward Assault</td>
+                <td>&#8627 D↓A</td>
+                <td>-</td>
+                <td>Usable at first phantom only</td>
+                </tr>
+                <tr>
+                <td>&#8627 Phantom: Upward Assault</td>
+                <td>&#8627 D↑A</td>
+                <td>-</td>
+                <td>Usable at first phantom only</td>
+                </tr>
+                <tr>
+                <td>Flip Attack</td>
                 <td>D↑A</td>
                 <td>-</td>
                 <td>Triggers Horde</td>
                 </tr>
                 <tr>
-                <td>Phantom</td>
-                <td>D↓J(JJ)</td>
-                <td>20+40+40</td>
-                <td>-</td>
-                </tr>
-                <tr>
-                <td>Scatter</td>
-                <td>D↑J</td>
-                <td>80</td>
+                <td>Jump kicks</td>
+                <td>D↑J+JAA</td>
+                <td>15+0+0+0</td>
                 <td>-</td>
                 </tr>
             </tbody>
@@ -1643,6 +1731,12 @@
             </tbody>
             </table>
         </div>
+
+        <div class="jumbotron" id="Raize">
+            <h3>Raize</h3>
+			<p><b>Origin:</b> Raize from Necrocalypse by VGKitten Aeris<br/>
+			<b>This character is not available yet</b>
+        </div>
 		
 		<div class="jumbotron" id="Rampe">
             <h3>Rampe</h3>
@@ -1705,7 +1799,10 @@
             <h3>Ryozaki</h3>
 			<p><b>Origin:</b> Ryozaki from LF2 Victory by LéoSilva<br/>
 			<b>Story:</b> Mangaka turned to Dojo master in Yiktorv, he intends to gather techniques and manga material in war, acting as war photographer.<br/>
-			<b>System:</b><br/>Bide - Blocking (Defend or Stone Guard) grants up to 10 Charges, spend all Charges to use Tenchi Haoh Ken</p>
+			<b>System:</b><br/>Bide - Blocking (Defend or Stone Guard) or Taunt grants up to 10 Charges<br/>Tenchi Haoh Ken - Damage proportional to current charges<br/>
+			5 Charges: Required<br/>
+			7 Charges: Breaks Fortified<br/>
+			8 Charges: Improves invincibility</p>
             <img src="readme\image\ryozaki_f.png"></img>
             <table class="table table-bordered">
             <thead>
@@ -1721,13 +1818,25 @@
                 <td>Taunt</td>
                 <td>AJ</td>
                 <td>-</td>
-                <td>Restores 5% MP</td>
+                <td>+1 Charge</td>
+                </tr>
+                <tr>
+                <td>&#8627 Tenchi Haoh Ken<br/>(Heaven & Earth Supreme Spark Fist)</td>
+                <td>&#8627 D↓J</td>
+                <td>-</td>
+                <td>-5 Charges</td>
                 </tr>
 			    <tr>
                 <td>Dragon Palm</td>
                 <td>D→A</td>
                 <td>30</td>
                 <td>-</td>
+                </tr>
+                <tr>
+                <td>&#8627 Tenchi Haoh Ken<br/>(Heaven & Earth Supreme Spark Fist)</td>
+                <td>&#8627 D↓J</td>
+                <td>-</td>
+                <td>-5 Charges</td>
                 </tr>
                 <tr>
                 <td>Rock Slam</td>
@@ -1751,13 +1860,13 @@
                 <td>Stone Guard</td>
                 <td>DJA</td>
                 <td>-</td>
-                <td>+1~2 Charge</td>
+                <td>+1~2 Charges</td>
                 </tr>
                 <tr>
                 <td>&#8627 Tenchi Haoh Ken<br/>(Heaven & Earth Supreme Spark Fist)</td>
-                <td>&#8627 D↓J<br/>D→AD↓J<br/>AJD↓J</td>
+                <td>&#8627 D↓J</td>
                 <td>-</td>
-                <td>Requires at least 5 Charges<br/>Damage proportional to Charges</td>
+                <td>-5 Charges</td>
                 </tr>
             </tbody>
             </table>
@@ -1868,7 +1977,7 @@
             <h3>Winnie</h3>
 			<p><b>Origin:</b> Winnie from LF2: Story of HongBa by Leviaiz<br/>
 			<b>Story:</b> Rampant spirit of Tornado. Accompanies Keny for unknown reason.<br/>
-			<b>System:</b><br/>Not available yet</p>
+			<b>System:</b><br/>None</p>
             <img src="readme\image\winnie_f.png"></img>
             <table class="table table-bordered">
             <thead>
@@ -1888,13 +1997,33 @@
                 </tr>
                 <tr>
                 <td>&#8627 Gust of Wind</td>
-                <td>&#8627 J<br />D→J</td>
+                <td>&#8627 J</td>
                 <td>40</td>
+                <td>-</td>
+                </tr>
+                <tr>
+                <td>&#8627 Gust of Wind (Far)</td>
+                <td>&#8627 →J</td>
+                <td>40</td>
+                <td>-</td>
+                </tr>
+                <tr>
+                <td>Gust of Wind</td>
+                <td>D→J</td>
+                <td>40</td>
+                <td>-</td>
+                </tr>
+                <tr>
+                <td>&#8627 Gust of Wind (Far)</td>
+                <td>&#8627 →</td>
+                <td>-</td>
+                <td>-</td>
                 </tr>
                 <tr>
                 <td>Razor Dance</td>
                 <td>D↓A(A)</td>
-                <td>0 + 20</td>
+                <td>0+20</td>
+                <td>-</td>
                 </tr>
                 <tr>
                 <td>Tornado Spirit</td>
@@ -1906,16 +2035,19 @@
                 <td>&#8627 Move</td>
                 <td>&#8627 ↑/↓</td>
                 <td>-</td>
+                <td>-</td>
                 </tr>
                 <tr>
                 <td>&#8627 Downburst</td>
                 <td>&#8627 A</td>
                 <td>15</td>
+                <td>Breaks Fortified</td>
                 </tr>
                 <tr>
                 <td>&#8627 Launch Tornado</td>
                 <td>&#8627 J</td>
                 <td>30</td>
+                <td>-</td>
                 </tr>
             </tbody>
             </table>
@@ -2037,7 +2169,7 @@
                 <tr>
                 <td>Thousand Daggers</td>
                 <td>DJ</td>
-                <td>20 + 75/s</td>
+                <td>20+75/s</td>
                 <td>Press D to cancel</td>
                 </tr>
                 <tr>
@@ -2070,7 +2202,7 @@
                 </tr>
                 <tr>
                 <td>Thunder Punch</td>
-                <td>Run+JA</td>
+                <td>Dash+A</td>
                 <td>2</td>
                 <td>-</td>
                 </tr>
@@ -2246,13 +2378,13 @@
                 <tr>
                 <td>Blade Piercer</td>
                 <td>Aerial+AA<br/>Run+AAA<br/>Dash+AA<br/></td>
-                <td>20</td>
+                <td>30</td>
                 <td>-</td>
                 </tr>
                 <tr>
                 <td>Blade Cross</td>
                 <td>DA(A)</td>
-                <td>10 + 0</td>
+                <td>10+0</td>
                 <td>-</td>
                 </tr>
                 <tr>
@@ -2430,7 +2562,7 @@
                 </tr>
                 <tr>
                 <td>Thunder Punch (Down)</td>
-                <td>Run+JA</td>
+                <td>Dash+A</td>
                 <td>8</td>
                 <td>-</td>
                 </tr>
@@ -2446,10 +2578,17 @@
                 <td>-</td>
                 <td>-</td>
                 </tr>
+                <tr>
                 <td>Fortress</td>
                 <td>DAA</td>
                 <td>-</td>
                 <td>Enters Armored mode</td>
+                </tr>
+                <tr>
+                <td>&#8627 Phoenix Recuperation</td>
+                <td>&#8627  A</td>
+                <td>60</td>
+                <td>Costs 4% HP, but recovers 20% HP over time</td>
                 </tr>
             </tbody>
             </table>
@@ -2481,7 +2620,7 @@
                 </tr>
                 <tr>
                 <td>Thunder Punch (Down)</td>
-                <td>Run+A</td>
+                <td>Dash+A</td>
                 <td>15</td>
                 <td>-</td>
                 </tr>
@@ -2516,12 +2655,6 @@
             <h3>Template</h3>
             <img src="readme\image\template_f.png"></img>
             <p>No moves</p>
-        </div>
-        
-        <div class="jumbotron" id="credits">
-                <h3>Credits</h3>
-                <p>To be announced
-                </p>
         </div>
     </main>
 
